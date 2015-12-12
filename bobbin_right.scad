@@ -1,6 +1,6 @@
 include <shared.scad>;
 
-module bobbin_right(  {
+module bobbin_right()  {
   difference() {
     difference() {
       union() {

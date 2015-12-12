@@ -42,37 +42,34 @@ module bobbin_left() {
 }
 
 module data_plate() {
-//  difference() {
-    difference() {
-      cylinder(h=1, r=coil_radius-6, $fn=100);
-      translate([-250,-(coil_radius-25),-1])
-        cube([500,500,8]);
+  difference() {
+    cylinder(h=1, r=coil_radius-6, $fn=100);
+    translate([-250,-(coil_radius-25),-1])
+      cube([500,500,8]);
+  }
+  linear_extrude(height = 2) {
+    if(coil_radius < 50) { 
+      rotate([0,0,180])
+        translate([-11,coil_radius-14,1])
+        text(text = str("Length: ", coil_length, "mm"), size = 3, $fn=100);
+      rotate([0,0,180])
+        translate([-14,coil_radius-19,1])
+        text(text = str("Diameter: ", coil_radius*2, "mm"), size = 3, $fn=100);
+      rotate([0,0,180])
+        translate([-20.5,coil_radius-24,1])
+        text(text = "www.maketronica.com", size = 3, $fn=100);
+    } else {
+      rotate([0,0,180])
+        translate([-20.5,coil_radius-14,1])
+        text(text = "www.maketronica.com", size = 3, $fn=100);
+      rotate([0,0,180])
+        translate([-16,coil_radius-19,1])
+        text(text = str("Coil Length: ", coil_length, "mm"), size = 3, $fn=100);
+      rotate([0,0,180])
+        translate([-20,coil_radius-24,1])
+        text(text = str("Coil Diameter: ", coil_radius*2, "mm"), size = 3, $fn=100);
     }
-    //translate([0,0,-1])
-    linear_extrude(height = 2) {
-      if(coil_radius < 50) { 
-        rotate([0,0,180])
-          translate([-11,coil_radius-14,1])
-          text(text = str("Length: ", coil_length, "mm"), size = 3, $fn=100);
-        rotate([0,0,180])
-          translate([-14,coil_radius-19,1])
-          text(text = str("Diameter: ", coil_radius*2, "mm"), size = 3, $fn=100);
-        rotate([0,0,180])
-          translate([-20.5,coil_radius-24,1])
-          text(text = "www.maketronica.com", size = 3, $fn=100);
-      } else {
-        rotate([0,0,180])
-          translate([-20.5,coil_radius-14,1])
-          text(text = "www.maketronica.com", size = 3, $fn=100);
-        rotate([0,0,180])
-          translate([-16,coil_radius-19,1])
-          text(text = str("Coil Length: ", coil_length, "mm"), size = 3, $fn=100);
-        rotate([0,0,180])
-          translate([-20,coil_radius-24,1])
-          text(text = str("Coil Diameter: ", coil_radius*2, "mm"), size = 3, $fn=100);
-      }
-    }
-//  }
+  }
 }
 
 module crossbar() {
@@ -98,6 +95,5 @@ module attachment_holes() {
 
 rotate([180,0,0]) translate([0,0,-6]) bobbin_left();
 bobbin_right();
-//data_plate();
 crossbar();
 attachment_holes();
