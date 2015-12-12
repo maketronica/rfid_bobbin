@@ -16,7 +16,7 @@ These are OpenSCAD files for 3D printable RFID bobbins.
  
 ## Changing the size
 
-Changing the size (diameter) of the bobbin is the most common change people need to make.  To do so, simply open the common.scad file in your favorite text editor, and change the "coil_radius" to half what you need the diameter to be.
+Changing the size (diameter) of the bobbin is the most common change people need to make.  To do so, simply open the `shared.scad` file in your favorite text editor, and change the "coil_radius" to half what you need the diameter to be.
 
 ## Left & Right vs Whole
 
