@@ -2,6 +2,8 @@
 
 These are OpenSCAD files for 3D printable RFID bobbins.
 
+See the [youtube videos](https://www.youtube.com/playlist?list=PL9hXQZsID4hXqOuscTTc0LotCnciC__Wk "RFID videos") on this project for more info.
+
 ## Usage
 
 1) You'll need to edit the files as necessary for your use case. Most likely, you'll need to change the size (see below).
